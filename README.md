@@ -3,12 +3,13 @@ The application allows to recognise the type of road sign based on the images ta
 The main idea of the project is to use only classical image processing algorithms without using machine learning.
 
 ## Description of the applied algorithm
+The operation of the algorithm is divided into two parts, the first is sign detection and location and the second is recognition.
+
 #### Filters
-The operation of the algorithm is divided into two parts, the first is sign detection and location and the second is recognition. 
-The sign detection process starts with converting the image to the HSV model and then applying the relevant mask for blue and red.
-#### Contours
-The red mask allows warning and prohibition signs to be located, as these signs have a red border. 
+The sign detection process starts with converting the image to the HSV model and then applying the relevant mask for blue and red. The red mask allows warning and prohibition signs to be located, as these signs have a red border. 
 With a blue filter mask, it is possible to detect a directional and an information sign. Both types of signs have a blue filling and different shapes.
+
+#### Contours
 The result is two images to be further processed. These images are then contoured to make it easier to detect the edges of the signs. 
 Based on the contours, any figure with a field above a preset value is cut out and then subjected to the recognition of the sign type.
 
